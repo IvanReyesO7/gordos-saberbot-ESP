@@ -28,7 +28,7 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
-  elsif message.downcase.include?('eat')
+  elsif message.downcase.include?('reu')
     ['sushi', 'tacos', 'curry', 'pad thai', 'kebab', 'spaghetti', 'burger'].sample
   elsif message.downcase.include?('events')
     # call events API in tokyo_events.rb
@@ -38,7 +38,7 @@ def bot_answer_to(message, user_name)
     bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
     # respond if a user asks a question
-    "Good question, #{user_name}!"
+    "Buena pregunta , #{user_name}!"
   else
     ["Habla bien csm.", 'Reencontrate', 'No es palta, es aguacate',
     "Gerry, cómete los bordes", "No coman sobre la alfombra :(",
