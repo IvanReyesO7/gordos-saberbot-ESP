@@ -19,11 +19,10 @@ end
 
 def bot_answer_to(message, user_name)
   # If you want to add Bob to group chat, uncomment the next line
-  # return '' unless message.downcase.include?('bob') # Only answer to messages with 'bob'
+  return '' unless message.downcase.include?("saber") # Only answer to messages with 'bob'
 
-  if message.downcase.include?('hello')
-    # respond if a user says hello
-    "Hello #{user_name}, how are you doing today?"
+  if message.downcase.include?('hola')
+    "Hola #{user_name}, como estas?"
   elsif message.downcase.include?('weather in')
     # call weather API in weather_api.rb
     fetch_weather(message)
