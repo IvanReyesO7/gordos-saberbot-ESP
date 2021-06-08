@@ -25,7 +25,6 @@ def bot_answer_to(message, user_name)
     "Hola #{user_name}, como estas?"
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
-    return "csm"
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
@@ -45,7 +44,8 @@ def bot_answer_to(message, user_name)
     "Gerry, cómete los bordes", "No coman sobre la alfombra :(",
     "Oe!", "Cuando unas retas de Smash?", "Pikachu flaco es un error",
     "Hmmmm, patas", "Ya pide la pizza carajo", "Tiene tatuajes? No la hago :(",
-    "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti"].sample
+    "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti", "Ayoooos 👋🏻", "Casi me matas de la risa don comedia",
+    "No la hago papi", "RIP", "eeeto, futsu?", "ponedme las pokebolas"].sample
   end
 end
 
