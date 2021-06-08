@@ -24,7 +24,8 @@ def bot_answer_to(message, user_name)
   if message.downcase.include?('hola')
     "Hola #{user_name}, como estas?"
   elsif message.downcase.include?('presidente')
-      "Viva Castillo csm ✏️"
+    "Viva Castillo csm ✏️"
+    return "csm"
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
