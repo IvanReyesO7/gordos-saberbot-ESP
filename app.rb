@@ -40,11 +40,11 @@ def bot_answer_to(message, user_name)
     # respond if a user asks a question
     "Good question, #{user_name}!"
   else
-    ["Habla bien csm.", 'Reencontrate', 'No es palta, es aguacate'
+    ["Habla bien csm.", 'Reencontrate', 'No es palta, es aguacate',
     "Gerry, cómete los border", "No coman sobre la alfombra :(",
     "Oe!", "Cuando unas retas de Smash?", "Pikachu flaco es un error",
-    "Hmmmm, patas", "Ya pide la pizza carajo", "Tiene tatuajes? No la hago :("
-    ""].sample
+    "Hmmmm, patas", "Ya pide la pizza carajo", "Tiene tatuajes? No la hago :(",
+    "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti"].sample
   end
 end
 
