@@ -1,5 +1,5 @@
 def quien_es(message)
-  adjetive = message.match(/.+el mas (\w+).*/)[1]
-  roll = ["Ivan", "David", "David", "Luis", "Carlos", "Gerry"]
+  adjetive = message.match(/.+el más (\w+).*/)[1]
+  roll = ["Iván", "David", "David 🇵🇪", "Luis", "Carlos", "Gerry"]
   return "#{roll.sample} es el más #{adjetive}"
 end

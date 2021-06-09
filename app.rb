@@ -30,7 +30,7 @@ def bot_answer_to(message, user_name)
     "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Hola\nTe saludo.\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
-  elsif message.downcase.include?('quien es')
+  elsif message.downcase.include?('quién es')
     quien_es(message)
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
