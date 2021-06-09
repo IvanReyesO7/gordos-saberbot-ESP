@@ -27,13 +27,13 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('presentate')
     "Mi nombre es Saber. Soy una waifu de cartón que vive en la casa del peruano 🇵🇪\nPienso mudarme cuando termine de comer mi bowl de arroz.\nCuando te dirijas a mí, por favor llámame por mi nombre.\n\nPuedes ver lo que soy capaz de hacer con el comando `saber comandos`\nEspero serte de mucha ayuda."
   elsif message.downcase.include?('comandos')
-    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Hola\nTe saludo.\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
+    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Hola\nTe saludo.\n-Presentate\nMe presento\n-Clima en :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Moneda\nLanzo una moneda.\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('quién es')
     quien_es(message)
   elsif message.downcase.include?('moneda')
-    "Ha caido #{["cara", "sello"].sample}"
+    "Ha caído #{["cara", "sello"].sample}"
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
@@ -47,7 +47,7 @@ def bot_answer_to(message, user_name)
     bot_jp_answer_to(message, user_name)
   elsif message.end_with?('?')
     # respond if a user asks a question
-    "Buena pregunta , #{user_name}!"
+    "Yo aveces me pregunto lo mismo, #{user_name}!"
   else
     ["Habla bien csm.", 'Reencontrate', 'No es palta, es aguacate',
     "Gerry, cómete los bordes", "No coman sobre la alfombra :(",
