@@ -9,6 +9,7 @@ require 'line/bot'
 require_relative 'ibm_watson'
 require_relative 'weather_api'
 require_relative 'tokyo_events_api'
+require_relative 'quien_es'
 
 def client
   @client ||= Line::Bot::Client.new do |config|
@@ -26,9 +27,11 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('presentate')
     "Mi nombre es Saber. Soy una waifu de cartón que vive en la casa del peruano 🇵🇪\nPienso mudarme cuando termine de comer mi bowl de arroz.\nCuando te dirijas a mí, por favor llámame por mi nombre.\n\nPuedes ver lo que soy capaz de hacer con el comando `saber comandos`\nEspero serte de mucha ayuda."
   elsif message.downcase.include?('comandos')
-    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\nhola\nTe saludo.\n-comandos\nTe digo lo que soy capaz de hacer.\n-clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que mas escucho en esta casa."
+    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Hola\nTe saludo.\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
+  elsif message.downcase.include?('quien es')
+    quien_es(message)
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('clima en')
