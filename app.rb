@@ -9,6 +9,7 @@ require 'line/bot'
 require_relative 'ibm_watson'
 require_relative 'weather_api'
 require_relative 'tokyo_events_api'
+require_relative 'google_api'
 
 def client
   @client ||= Line::Bot::Client.new do |config|
@@ -29,7 +30,7 @@ def bot_answer_to(message, user_name)
     # call weather API in weather_api.rb
     fetch_weather(message)
   elsif message.downcase.include?('reu')
-    ['sushi', 'tacos', 'curry', 'pad thai', 'kebab', 'spaghetti', 'burger'].sample
+    upcoming_events
   elsif message.downcase.include?('events')
     # call events API in tokyo_events.rb
     fetch_tokyo_events
