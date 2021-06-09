@@ -26,7 +26,7 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('presentate')
     "Mi nombre es Saber. Soy una waifu de cartón que vive en la casa del peruano 🇵🇪\nPienso mudarme cuando termine de comer mi bowl de arroz.\nCuando te dirijas a mí, por favor llámame por mi nombre.\n\nPuedes ver lo que soy capaz de hacer con el comando `saber comandos`\nEspero serte de mucha ayuda."
   elsif message.downcase.include?('comandos')
-    "Estos son los comandos con los que te puedes comunicar conmigo:\n-hola\nTe saludo.\n-comandos\nTe digo lo que soy capaz de hacer.\n-clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que mas escucho en esta casa."
+    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\nhola\nTe saludo.\n-comandos\nTe digo lo que soy capaz de hacer.\n-clima :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que mas escucho en esta casa."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('presidente')
