@@ -26,12 +26,12 @@ def fetch_weather(message)
   most_freq_weather = freq.max_by { |_k, v| v }[0]
 
   # Report creation
-  report = "El clima en #{location} para los siguientes 4 dias.\n"
+  report = "The weather is mostly #{most_freq_weather.upcase} in #{location} for the next 4 days.\n"
   # If there are particular weather days
   other_weathers = weather_forcast.reject { |day| day[1] == most_freq_weather}
-  report += "exepto #{other_weathers.map { |day| "#{day[0]}(#{day[1]})" }.join(", ")}.\n" if other_weathers.any?
+  report += "Except on #{other_weathers.map { |day| "#{day[0]}(#{day[1]})" }.join(", ")}.\n" if other_weathers.any?
   # tempreatures
-  report += "\nLa temperatura sera:\n#{weather_forcast.map { |day| " #{day[2].round}˚C for #{day[0]}" }.join("\n")}"
+  report += "\nThe temperature will be:\n#{weather_forcast.map { |day| " #{day[2].round}˚C for #{day[0]}" }.join("\n")}"
   # Return the string from fore_cast data
   return report
 end
