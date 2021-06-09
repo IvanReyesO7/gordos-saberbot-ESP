@@ -32,8 +32,8 @@ def bot_answer_to(message, user_name)
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('quién es')
     quien_es(message)
-  elsif message.downcase.include?('presidente')
-    "Viva Castillo csm ✏️"
+  elsif message.downcase.include?('moneda')
+    "Ha caido #{["cara", "sello"].sample}"
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
