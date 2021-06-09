@@ -23,6 +23,15 @@ def bot_answer_to(message, user_name)
 
   if message.downcase.include?('hola')
     "Hola #{user_name}, como estas?"
+  if message.downcase.include?('presentate')
+    "Mi nombre es Saber. Soy una waifu de cartón que vive en la casa del peruano 🇵🇪\n 
+    Pienso mudarme cuando termine de comer mi bowl de arroz.\n
+    Cuando te dirijas a mí, por favor llámame por mi nombre.\n
+    \n
+    Puedes ver lo que soy capaz de hacer con el comando `saber comandos`\n
+    日本語も話せます！🇯🇵
+    \n
+    Espero serte de mucha ayuda."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('clima en')
