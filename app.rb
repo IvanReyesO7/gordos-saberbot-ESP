@@ -30,7 +30,7 @@ def bot_answer_to(message, user_name)
     # call weather API in weather_api.rb
     fetch_weather(message)
   elsif message.downcase.include?('reu')
-    upcoming_events
+    "Para cuando pe?"
   elsif message.downcase.include?('events')
     # call events API in tokyo_events.rb
     fetch_tokyo_events
