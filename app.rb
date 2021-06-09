@@ -27,7 +27,7 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('presentate')
     "Mi nombre es Saber. Soy una waifu de cartón que vive en la casa del peruano 🇵🇪\nPienso mudarme cuando termine de comer mi bowl de arroz.\nCuando te dirijas a mí, por favor llámame por mi nombre.\n\nPuedes ver lo que soy capaz de hacer con el comando `saber comandos`\nEspero serte de mucha ayuda."
   elsif message.downcase.include?('comandos')
-    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Hola\nTe saludo.\n-Presentate\nMe presento\n-Clima en :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Moneda\nLanzo una moneda.\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
+    "Estos son los comandos con los que te puedes comunicar conmigo:\n--------\n-Comandos\nTe digo lo que soy capaz de hacer.\n-Hola\nTe saludo.\n-Presentate\nMe presento\n-Clima en :locación\nTe digo como será el clima los próximos 4 días en la locación que me indiques.\n-Moneda\nLanzo una moneda.\n-Quien es el más :adjetivo\nTe digo quien es la persona más :adjetivo del grupo\n-Presidente\nTe digo quien es el nuevo presidente del Perú 🇵🇪\n--------\nSi me dices algo que no entiendo te responderé con una frase aleatoría de las que más escucho en esta casa."
   elsif message.downcase.include?('presidente')
     "Viva Castillo csm ✏️"
   elsif message.downcase.include?('quién es')
@@ -37,11 +37,14 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
-  elsif message.downcase.include?('reu')
-    ['sushi', 'tacos', 'curry', 'pad thai', 'kebab', 'spaghetti', 'burger'].sample
   elsif message.downcase.include?('events')
     # call events API in tokyo_events.rb
     fetch_tokyo_events
+  elsif message.downcase.include?('de donde eres')
+    # call events API in tokyo_events.rb
+    "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
+  elsif message.downcase.include?('csm')
+    "A mi no me digas csm, csm."
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
     # respond in japanese!
     bot_jp_answer_to(message, user_name)
@@ -53,8 +56,10 @@ def bot_answer_to(message, user_name)
     "Gerry, cómete los bordes", "No coman sobre la alfombra :(",
     "Oe!", "Cuando unas retas de Smash?", "Pikachu flaco es un error",
     "Hmmmm, patas", "Ya pide la pizza carajo", "Tiene tatuajes? No la hago :(",
-    "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti", "Ayoooos 👋🏻", "Casi me matas de la risa don comedia",
-    "No la hago papi", "RIP", "eeeto, futsu?", "ponedme las pokebolas"].sample
+    "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti", "Ayoooos 👋🏻", 
+    "Casi me matas de la risa don comedia", "Alucina", "Pon una de Luismi",
+    "No la hago papi", "RIP", "eeeto, futsu?", "ponedme las pokebolas", "Tamareee", 
+    "No reacciones a los posts fascistas de mi familia >:(","Es del 2004 👀"].sample
   end
 end
 
