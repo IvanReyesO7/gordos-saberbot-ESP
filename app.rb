@@ -6,6 +6,7 @@ require 'uri'
 require 'tempfile'
 require 'line/bot'
 require 'twitch/client'
+require 'twitch/version'
 
 require_relative 'ibm_watson'
 require_relative 'weather_api'
