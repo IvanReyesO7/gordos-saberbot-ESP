@@ -148,12 +148,7 @@ post '/callback' do
     when Line::Bot::Event::MessageType::Location 
       location = event.message['address'].split(" ")
       send_bot_message(
-        "Veo que estás en #{location[1]}, #{location[2]}",
-        client,
-        event
-      )
-      send_bot_message(
-        "Yo vivo en Nishinippori, caele 👀",
+        "Veo que estás en #{location[1]} #{location[2]}\nYo vivo en Nishinippori, caele 👀",
         client,
         event
       )
