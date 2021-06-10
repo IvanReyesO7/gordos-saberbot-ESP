@@ -35,3 +35,4 @@ def fetch_weather(message)
   # Return the string from fore_cast data
   return report
 end
+
