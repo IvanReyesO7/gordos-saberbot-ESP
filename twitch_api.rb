@@ -18,17 +18,17 @@ def get_twitch_user(message)
     http.request(request)
   end
   resp = JSON.parse(response.body)["data"]
-    
-    p resp
+
   if !resp.empty?
-    user = resp.select{ |user| user["broadcaster_login"] == "#{query}" }
+    user = resp.select{ |user| user["broadcaster_login"] == "#{query}" }[0]
     p user
-    if user[0]["is_live"] == true
-      return "El usuario #{query} está transmitiendo en vivo!!! 🔴"  
+    if user["is_live"] == true
+      return "El usuario #{query} está transmitiendo en vivo jugando #{user["game_name"]}!!! 🔴"  
     else
-      return "El usuario #{query} no está transmitiendo en este momento." 
+      return "El usuario #{query} no está transmitiendo en este momento, en su última transmici;on jugó #{user["game_name"]}." 
     end
   else
     return "#{query}? Quién te conoce papá?."
   end
 end
+
