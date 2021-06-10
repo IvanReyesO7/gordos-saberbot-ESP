@@ -23,7 +23,7 @@ def get_twitch_user(message)
     user = resp.select{ |user| user["broadcaster_login"] == "#{query}" }[0]
     p user
     if user["is_live"] == true
-      return "El usuario #{query} está transmitiendo en vivo jugando #{user["game_name"]}!!! 🔴\NMíralo en https://www.twitch.tv/#{query}"  
+      return "El usuario #{query} está transmitiendo en vivo jugando #{user["game_name"]}!!! 🔴\nMíralo en https://www.twitch.tv/#{query}"  
     else
       return "El usuario #{query} no está transmitiendo en este momento, en su última transmición jugó #{user["game_name"]}.\nSíguelo en https://www.twitch.tv/#{query}" 
     end
