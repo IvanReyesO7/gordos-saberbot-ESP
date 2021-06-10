@@ -146,8 +146,9 @@ post '/callback' do
         )
       end
     when Line::Bot::Event::MessageType::Location 
+      location = event.message['address']
       send_bot_message(
-        'Everything is working!',
+        "Veo que estás en #{location}",
         client,
         event
       )
