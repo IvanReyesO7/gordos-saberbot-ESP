@@ -2,11 +2,10 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-def get_twitch_user
-  # query = message.match(/.+twitch (\w+).*/)[1]
-  # query = query.downcase
-  query = "thecresptv"
-  uri = URI.parse("https://api.twitch.tv/helix/search/channels?query=thecresptv")
+def get_twitch_user(message)
+  query = message.match(/.+twitch (\w+).*/)[1]
+  query = query.downcase
+  uri = URI.parse("https://api.twitch.tv/helix/search/channels?query=#{query}")
   request = Net::HTTP::Get.new(uri)
   request["Client-Id"] = "k4928r3bvo73781oqcxrrm1xuela01"
   request["Authorization"] = "Bearer wn0i367dvejdnc8dcd766qnovrf7ds"
@@ -33,5 +32,3 @@ def get_twitch_user
     return "#{query}? Quién te conoce papá?."
   end
 end
-
-p get_twitch_user

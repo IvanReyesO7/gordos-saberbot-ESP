@@ -42,7 +42,7 @@ def bot_answer_to(message, user_name)
     fetch_weather(message)
   elsif message.downcase.include?('twitch')
     # call events API in tokyo_events.rb
-    get_twitch_user
+    get_twitch_user(message)
   elsif message.downcase.include?('de donde eres')
     # call events API in tokyo_events.rb
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
