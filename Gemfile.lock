@@ -7,10 +7,6 @@ GEM
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     eventmachine (1.2.7)
-    faraday (0.17.4)
-      multipart-post (>= 1.2, < 3)
-    faraday_middleware (0.14.0)
-      faraday (>= 0.7.4, < 1.0)
     faye-websocket (0.10.7)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
@@ -30,7 +26,6 @@ GEM
       faye-websocket (~> 0.10)
       http (~> 3.3)
     line-bot-api (1.18.0)
-    multipart-post (2.1.1)
     mustermann (1.0.3)
     public_suffix (3.0.3)
     rack (2.0.8)
@@ -42,9 +37,6 @@ GEM
       rack-protection (= 2.0.4)
       tilt (~> 2.0)
     tilt (2.0.8)
-    twitch-api (0.4.0)
-      faraday (>= 0.12.2)
-      faraday_middleware (~> 0.12)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
@@ -60,7 +52,6 @@ DEPENDENCIES
   ibm_watson
   line-bot-api (~> 1.18.0)
   sinatra
-  twitch-api
 
 BUNDLED WITH
    1.17.2
