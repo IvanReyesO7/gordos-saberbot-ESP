@@ -1,3 +1,7 @@
+require 'json'
+require 'net/http'
+require 'uri'
+
 def get_twitch_user
   # query = message.match(/.+twitch (\w+).*/)[1]
   # query = query.downcase
@@ -30,3 +34,5 @@ def get_twitch_user
     return "#{query}? Quién te conoce papá?."
   end
 end
+
+p get_twitch_user
