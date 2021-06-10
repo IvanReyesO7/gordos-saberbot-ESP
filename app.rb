@@ -10,7 +10,7 @@ require_relative 'ibm_watson'
 require_relative 'weather_api'
 require_relative 'tokyo_events_api'
 require_relative 'quien_es'
-require_relative 'twitch_api'
+
 
 def client
   @client ||= Line::Bot::Client.new do |config|
