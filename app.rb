@@ -45,6 +45,8 @@ def bot_answer_to(message, user_name)
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
   elsif message.downcase.include?('csm')
     "A mi no me digas csm, csm."
+  elsif message.downcase.include?('tipos de mensaje')
+    "#{Line::Bot::Event::MessageType.all}"
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
     # respond in japanese!
     bot_jp_answer_to(message, user_name)
