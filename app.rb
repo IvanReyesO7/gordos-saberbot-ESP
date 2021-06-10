@@ -10,6 +10,7 @@ require_relative 'ibm_watson'
 require_relative 'weather_api'
 require_relative 'tokyo_events_api'
 require_relative 'quien_es'
+require_relative 'twitch_api'
 
 def client
   @client ||= Line::Bot::Client.new do |config|
@@ -37,9 +38,9 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('clima en')
     # call weather API in weather_api.rb
     fetch_weather(message)
-  elsif message.downcase.include?('events')
+  elsif message.downcase.include?('twitch')
     # call events API in tokyo_events.rb
-    fetch_tokyo_events
+    twitch_api_status
   elsif message.downcase.include?('de donde eres')
     # call events API in tokyo_events.rb
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
@@ -59,7 +60,7 @@ def bot_answer_to(message, user_name)
     "Ahhh, ya sacó a su negro de Roppongi", "Ya, pongan Ruti", "Ayoooos 👋🏻", 
     "Casi me matas de la risa don comedia", "Alucina", "Pon una de Luismi",
     "No la hago papi", "RIP", "eeeto, futsu?", "ponedme las pokebolas", "Tamareee", 
-    "No reacciones a los posts fascistas de mi familia >:(","Es del 2004 👀"].sample
+    "Es del 2004 👀", "Está bien pinche sorda la Marta"].sample
   end
 end
 
@@ -96,8 +97,7 @@ def send_bot_location(location, client, event)
   p client
   invitation = "Veo que estás en #{location[1]} #{location[2]}.\nYo vivo en Nishinippori, caele 👀"
 
-  message = [{ type: 'location', title: "Mi casa", address: "6--26-3 Nishinippori, Arakawa-ku, Tokyo 116-0013", latitude: 35.73660464213271, longitude: 139.77021093469966 },
-    { type: 'text', text: invitation }]
+  message = [{ type: 'text', text: invitation }, { type: 'location', title: "Mi casa", address: "6-26-3 Nishinippori, Arakawa-ku, Tokyo 116-0013", latitude: 35.73660464213271, longitude: 139.77021093469966 }]
   p message
 
   client.reply_message(event['replyToken'], message)
