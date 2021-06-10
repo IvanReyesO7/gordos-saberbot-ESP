@@ -152,6 +152,11 @@ post '/callback' do
         client,
         event
       )
+      send_bot_message(
+        "Yo vivo en Nishinippori, caele 👀",
+        client,
+        event
+      )
     end
   end
   'OK'
