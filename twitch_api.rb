@@ -3,7 +3,7 @@ def get_twitch_user
   # query = query.downcase
   query = "thecresptv"
   p query
-  uri = URI.parse("https://api.twitch.tv/helix/search/channels?query=#{query}")
+  uri = URI.parse("https://api.twitch.tv/helix/search/channels?query=thecresptv")
   request = Net::HTTP::Get.new(uri)
   request["Client-Id"] = "k4928r3bvo73781oqcxrrm1xuela01"
   request["Authorization"] = "Bearer wn0i367dvejdnc8dcd766qnovrf7ds"
