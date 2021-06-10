@@ -146,6 +146,9 @@ post '/callback' do
         )
       end
     end
+  when Line::Bot::Event::MessageType::Location
+    puts "Hello, world"
+  end
   end
   'OK'
 end
