@@ -90,12 +90,14 @@ def send_bot_message(message, client, event)
   'OK'
 end
 
-def send_bot_location(client, event)
+def send_bot_location(location, client, event)
   p 'Bot message sent!'
   p event['replyToken']
   p client
+  invitation = "Veo que estás en #{location[1]} #{location[2]}.\nYo vivo en Nishinippori, caele 👀"
 
-  message = { type: 'location', title: "Mi casa", address: "6--26-3 Nishinippori, Arakawa-ku, Tokyo 116-0013", latitude: 35.73660464213271, longitude: 139.77021093469966 }
+  message = [{ type: 'location', title: "Mi casa", address: "6--26-3 Nishinippori, Arakawa-ku, Tokyo 116-0013", latitude: 35.73660464213271, longitude: 139.77021093469966 },
+    { type: 'text', text: invitation }]
   p message
 
   client.reply_message(event['replyToken'], message)
@@ -160,12 +162,7 @@ post '/callback' do
       end
     when Line::Bot::Event::MessageType::Location 
       location = event.message['address'].split(" ")
-      send_bot_location(client, event)
-      send_bot_message(
-        "Veo que estás en #{location[1]} #{location[2]}.\nYo vivo en Nishinippori, caele 👀",
-        client,
-        event
-      )
+      send_bot_location(location, client, event)
     end
   end
   'OK'
