@@ -1,8 +1,4 @@
-require 'net/http'
-require 'uri'
-require 'json'
-
-def get_twitch_user(_message)
+def get_twitch_user
   # query = message.match(/.+twitch (\w+).*/)[1]
   # query = query.downcase
   query = "thecresptv"

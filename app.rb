@@ -6,10 +6,12 @@ require 'uri'
 require 'tempfile'
 require 'line/bot'
 
+
 require_relative 'ibm_watson'
 require_relative 'weather_api'
 require_relative 'tokyo_events_api'
 require_relative 'quien_es'
+require_relative 'twitch_api'
 
 
 def client
@@ -40,7 +42,7 @@ def bot_answer_to(message, user_name)
     fetch_weather(message)
   elsif message.downcase.include?('twitch')
     # call events API in tokyo_events.rb
-    twitch_api_status(message)
+    twitch_api_status
   elsif message.downcase.include?('de donde eres')
     # call events API in tokyo_events.rb
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
