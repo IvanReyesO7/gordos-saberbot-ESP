@@ -12,8 +12,6 @@ require_relative 'weather_api'
 require_relative 'tokyo_events_api'
 require_relative 'quien_es'
 require_relative 'twitch_api'
-require_relative 'create_event'
-
 
 def client
   @client ||= Line::Bot::Client.new do |config|
@@ -100,6 +98,16 @@ def send_bot_location(location, client, event)
   message = [{ type: 'text', text: invitation }, { type: 'location', title: "Mi casa", address: "6-26-3 Nishinippori, Arakawa-ku, Tokyo 116-0013", latitude: 35.73660464213271, longitude: 139.77021093469966 }]
   p message
 
+  client.reply_message(event['replyToken'], message)
+  'OK'
+end
+
+def send_bot_event(message, client, event)
+  p 'Bot message sent!'
+  p event['replyToken']
+  p client
+
+  message = { type: 'datetimepicker', label: "Test", data: "storeId=12345", mode: "datetime" }
   client.reply_message(event['replyToken'], message)
   'OK'
 end
