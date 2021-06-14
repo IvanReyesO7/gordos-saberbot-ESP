@@ -12,6 +12,7 @@ require_relative 'weather_api'
 require_relative 'tokyo_events_api'
 require_relative 'quien_es'
 require_relative 'twitch_api'
+require_relative 'create_event'
 
 
 def client
@@ -38,13 +39,10 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('moneda')
     "Ha caído #{["cara", "sello"].sample}"
   elsif message.downcase.include?('clima en')
-    # call weather API in weather_api.rb
     fetch_weather(message)
   elsif message.downcase.include?('twitch')
-    # call events API in tokyo_events.rb
     get_twitch_user(message)
   elsif message.downcase.include?('de donde eres')
-    # call events API in tokyo_events.rb
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
   elsif message.downcase.include?('csm')
     "A mi no me digas csm, csm."
@@ -104,7 +102,6 @@ def send_bot_location(location, client, event)
 
   client.reply_message(event['replyToken'], message)
   'OK'
-
 end
 
 post '/callback' do
@@ -136,10 +133,10 @@ post '/callback' do
         p "#{response.code} #{response.body}"
       end
 
-      if event.message['text'].downcase == 'hello, world'
+      if event.message['text'].downcase.include?('evento')
         # Sending a message when LINE tries to verify the webhook
-        send_bot_message(
-          'Everything is working!',
+        send_bot_event(
+          event.message['text'],
           client,
           event
         )
