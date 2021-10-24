@@ -5,7 +5,7 @@ require 'net/http'
 require 'uri'
 require 'tempfile'
 require 'line/bot'
-
+require 'yaml'
 
 require_relative 'ibm_watson'
 require_relative 'weather_api'
