@@ -45,7 +45,7 @@ def bot_answer_to(message, user_name)
   elsif message.downcase.include?('csm')
     "A mi no me digas csm, csm."
   elsif message.downcase.include?('palta')
-    "No se dice palta, se dice aguacata 🥑"
+    "No se dice palta, se dice aguacate 🥑"
   elsif message.downcase.include?('gracias')
     ["De nada", "Para servir", "Un gusto", "😘", "No hay de qué"].sample
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
