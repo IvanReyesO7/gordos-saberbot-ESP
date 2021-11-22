@@ -44,6 +44,8 @@ def bot_answer_to(message, user_name)
     "Fui fábricada por niños de 10 años en Dongguan, China y vendida en una tienda de Akihabara."
   elsif message.downcase.include?('csm')
     "A mi no me digas csm, csm."
+  elsif message.downcase.include?('palta')
+    "No se dice palta, se dice aguacata 🥑"
   elsif message.downcase.include?('gracias')
     ["De nada", "Para servir", "Un gusto", "😘", "No hay de qué"].sample
   elsif message.match?(/([\p{Hiragana}\p{Katakana}\p{Han}]+)/)
